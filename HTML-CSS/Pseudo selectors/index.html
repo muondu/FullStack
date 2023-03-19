@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Selectors</title>
+    <style>
+        .box{
+            height: 20px;
+            border: 1px solid blue;
+            color: white;
+        }
+        /* Doesn't add the 3rd div without the background blue */
+        .box:not(.dontselectme) {
+            background-color: blue;
+        }
+        /* When yu hover, the background becomes  */
+        .box:hover{
+            background-color: green;
+        }
+        .box:nth-child(5){
+            background-color: yellow;
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box dontselectme"></div>
+        <div class="box"></div>
+        <div class="box">SELECT ME</div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
